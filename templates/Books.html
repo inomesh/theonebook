@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Books
+{% endblock %}
+
+{% block body %}
+    <h1>Book Details</h1>
+
+     <pre>
+        {{ message }}
+
+         title: {{ Book.title }}
+         author: {{ Book.author }}
+         year: {{ Book.year}} 
+    </pre>
+
+    <h2>readers</h2>
+    <ul>
+        {% for read in reads %}
+            <li>{{ read.first_name }}</li>
+        {% else %}
+            <li>No readers.</li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}

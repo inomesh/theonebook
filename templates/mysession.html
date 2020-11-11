@@ -1,0 +1,82 @@
+{% extends "layout.html" %}
+
+{% block signout %}
+<li class="nav-item active">
+    <a class="nav-link" href="/signout">Sign-out</a>
+  </li>
+{% endblock %}
+
+{% block link %}
+    <link rel="stylesheet" href="/static/mysession.css">
+{% endblock %}
+
+{% block title %}
+    Profile
+{% endblock %}
+
+{% block body %}
+        
+    <div class="center"> Dashboard </div>
+    <hr>
+    <div class="row container-fluid">
+        <div class="col-sm-4 text-black container border-dark" >
+
+            <form action="/update" method="post">
+                <div>
+                <label for="ISBN">Book ISBN no. </label>
+                <input type="text" name="newISBN" placeholder="Book ISBN">
+                </div>
+                <div>
+                    <button type="submit">start read</button>
+                </div>
+            </form>
+            <!-- {% if len(addbook) != 0 %}
+            <div>
+                <h4> Book added " {{ addbook.title }} ". </h4>
+            </div>
+            {% endif  %} -->
+
+
+
+        </div>
+        <div class="col-sm-8 bg-white text-black">
+            <h3>Now reading...</h3>
+            <div class="row">
+
+                <!--column 1-->
+            {% for Book in Books %} 
+                {% if Book.id % 2 == 0 %}
+                <div class="col-sm-2">
+                    <div class="card-deck border border-light">
+                        <div class="card-body">
+                        <a href="/api/{{ Book.isbn }}"><h5 class="card-title">{{ Book.title }}</h5>
+                        <p class="card-text">Written by <strong>{{ Book.author }}</strong> </p>
+                        </a>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+            {% endfor %}
+        
+        
+                <!--column 2-->
+            {% for Book in Books %} 
+                {% if Book.id % 2 != 0 %}
+                <div class="col-sm-2">
+                    <div class="card-deck border border-light">
+                        <div class="card-body">
+                        <a href="/api/{{ Book.isbn }}"><h5 class="card-title">{{ Book.title }}</h5>
+                        <p class="card-text">Written by <strong>{{ Book.author }}</strong> </p>
+                        </a>
+                        </div>
+                    </div>   
+                </div>
+                {% endif %}
+            {% endfor %}
+
+        </div>
+       
+    </div>
+
+    
+{% endblock %}

@@ -1,0 +1,13 @@
+h1{
+    color: black;
+    text-align: center;
+    position: relative;
+}
+
+.card-title, .card-text{
+    color: black;
+}
+
+.card{
+    display: flex;
+}

@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Requested Details
+{% endblock %}
+
+{% block body %}
+        
+<div>
+    
+    <h1> Requested Book Details through api </h1>
+    <div class="Bookshown" style="background-color: rgba(240, 248, 255, 0.801);">
+        <!--{{mybook}} -->
+
+
+       <pre>
+            
+            <b>Author           :</b>  {{ mybook.author }}
+            <b>Title            :</b>  {{ mybook.title }}
+            <b>ISBN             :</b>  {{ mybook[1] }}
+            <b>year             :</b>  {{ mybook.year }}
+          
+         
+                      
+       </pre>
+   
+       <pre>
+            
+        <b>id                       :</b>  {{ mybook[0] }}
+        <b>isbn                     :</b>  {{ mybook[1] }}
+        <b>ISBN-13                  :</b>  {{ mybook[2] }}
+        <b>ratings count            :</b>  {{ mybook[3] }}
+        <b>review count             :</b>  {{ mybook[4] }}
+        <b>Text ratings count       :</b>  {{ mybook[5] }}
+        <b>work ratings count       :</b>  {{ mybook[6] }}
+        <b>work review count        :</b>  {{ mybook[7] }}
+        <b>work text reviews count  :</b>  {{ mybook[8] }}
+        <b>average ratings          :</b>  {{ mybook[9] }}
+      
+      
+     
+                  
+   </pre>
+       
+    </div>
+      
+</div>
+
+{% endblock %}

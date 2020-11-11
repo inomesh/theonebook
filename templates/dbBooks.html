@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Requested Details
+{% endblock %}
+
+{% block body %}
+        
+<div>
+    
+    <h1> Requested Book Details through database</h1>
+    <div class="Bookshown" style="background-color: rgba(240, 248, 255, 0.801); color: black;">
+                
+        
+                   <!-- {{mybook}}-->
+       <pre>
+            
+            <b>Author           :</b>  {{ mybookdb.author }}
+            <b>Title            :</b>  {{ mybookdb.title }}
+            <b>ISBN             :</b>  {{ mybookdb.isbn }}
+            <b>year             :</b>  {{ mybookdb.year }}
+            <b>Average score    :</b>  {{ ratings }}
+            <b>Review count     :</b>  {{ reviews }}
+         
+                      
+       </pre>
+   
+       
+    </div>
+      
+</div>
+
+{% endblock %}

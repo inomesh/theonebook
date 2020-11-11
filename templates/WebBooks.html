@@ -1,0 +1,47 @@
+{% extends "layout.html" %} {% block title %} All Books {% endblock %} {%block
+link %}
+<link rel="stylesheet" href="/static/book.css" />
+{% endblock %} {% block body %}
+<div>
+  <h1>All Books</h1>
+</div>
+
+<hr />
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="card-deck">
+      <!--column 1-->
+      {% for Book in Books %} {% if Book.id % 2 == 0 %}
+      <div class="col col-sm-4 col-xl-2 border border-light">
+        <div class="card-body">
+          <a href="/api/{{ Book.isbn }}"
+            ><h5 class="card-title">{{ Book.title }}</h5>
+            <p class="card-text">
+              Written by <strong class="text-info">{{ Book.author }}</strong>
+            </p>
+          </a>
+        </div>
+      </div>
+      {% endif %} {% endfor %}
+
+      <!--column 2-->
+      {% for Book in Books %} {% if Book.id % 2 != 0 %}
+      <div class="col col-sm-4 col-xl-2 border border-light">
+        <!-- <div class="card-deck border border-light"> -->
+        <div class="card-body">
+          <a href="/api/{{ Book.isbn }}"
+            ><h5 class="card-title">{{ Book.title }}</h5>
+            <p class="card-text">
+              Written by <strong class="text-info">{{ Book.author }}</strong>
+            </p>
+          </a>
+        </div>
+        <!-- </div>    -->
+      </div>
+      {% endif %} {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% endblock %}
