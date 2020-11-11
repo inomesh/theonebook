@@ -6,27 +6,61 @@
 
 {% block body %}
         
-<div>
+<div class="container">
     
-    <h1> Requested Book Details through database</h1>
-    <div class="Bookshown" style="background-color: rgba(240, 248, 255, 0.801); color: black;">
-                
-        
+    <div class="row no-gutters justify-content-center">
+
+        <h1> Requested Book Details from database</h1>       
                    <!-- {{mybook}}-->
-       <pre>
-            
-            <b>Author           :</b>  {{ mybookdb.author }}
-            <b>Title            :</b>  {{ mybookdb.title }}
-            <b>ISBN             :</b>  {{ mybookdb.isbn }}
-            <b>year             :</b>  {{ mybookdb.year }}
-            <b>Average score    :</b>  {{ ratings }}
-            <b>Review count     :</b>  {{ reviews }}
-         
-                      
-       </pre>
+        <form class="my-3">
+
+            <div class="form-group row">
+                <label for="author" class="col-sm-3 col-form-label">Author</label>
+                <div class="col-sm-9">
+                  <input type="text" readonly class="form-control-plaintext text-dark" id="author" value="{{ mybookdb.author }}" disabled>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="author" class="col-sm-3 col-form-label">Title</label>
+                <div class="col-sm-9">
+                  <input type="text" readonly class="form-control-plaintext text-dark" id="author" value="{{ mybookdb.title }}" disabled>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="author" class="col-sm-3 col-form-label">ISBN</label>
+                <div class="col-sm-9">
+                  <input type="text" readonly class="form-control-plaintext text-dark" id="author" value="{{ mybookdb.isbn }}" disabled>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="author" class="col-sm-3 col-form-label">year</label>
+                <div class="col-sm-9">
+                  <input type="text" readonly class="form-control-plaintext text-dark" id="author" value="{{  mybookdb.year }}" disabled>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="author" class="col-sm-3 col-form-label">Average score</label>
+                <div class="col-sm-9">
+                  <input type="text" readonly class="form-control-plaintext text-dark" id="author" value="{{ratings }}" disabled>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="author" class="col-sm-3 col-form-label">Review count</label>
+                <div class="col-sm-9">
+                  <input type="text" readonly class="form-control-plaintext text-dark" id="author" value="{{ reviews }}" disabled>
+                </div>
+            </div>
+
+        </form>
+
+    </div>
    
        
-    </div>
       
 </div>
 
