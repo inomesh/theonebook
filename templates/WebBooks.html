@@ -1,16 +1,29 @@
-{% extends "layout.html" %} {% block title %} All Books {% endblock %} {%block
-link %}
-<link rel="stylesheet" href="/static/book.css" />
-{% endblock %} {% block body %}
-<div>
-  <h1>All Books</h1>
-</div>
+{% extends "layout.html" %} {% block title %} All Books {% endblock %}
 
-<hr />
+{%block link %}
+<link rel="stylesheet" href="/static/book.css" />
+{% endblock %} 
+
+{% block nav %} 
+
+<!-- search bar -->
+<form class="form-inline shadow-sm">
+  <input class="form-control" type="text" id="search" name="search" placeholder="Search..." autocomplete="off"/>
+</form>
+
+{% endblock %}
+
+
+
+{% block body %}
 
 <div class="container-fluid">
   <div class="row">
-    <div class="card-deck">
+    <div class="col-12">
+      <h1>All Books</h1>
+    </div>
+
+    <div class="col-12 card-deck">
       <!--column 1-->
       {% for Book in Books %} {% if Book.id % 2 == 0 %}
       <div class="col col-sm-4 col-xl-2 border border-light">
@@ -18,7 +31,8 @@ link %}
           <a href="/api/{{ Book.isbn }}"
             ><h5 class="card-title">{{ Book.title }}</h5>
             <p class="card-text">
-              Written by <strong class="text-info">{{ Book.author }}</strong>
+              Written by
+              <strong class="text-info author">{{ Book.author }}</strong>
             </p>
           </a>
         </div>
@@ -33,7 +47,8 @@ link %}
           <a href="/api/{{ Book.isbn }}"
             ><h5 class="card-title">{{ Book.title }}</h5>
             <p class="card-text">
-              Written by <strong class="text-info">{{ Book.author }}</strong>
+              Written by
+              <strong class="text-info author">{{ Book.author }}</strong>
             </p>
           </a>
         </div>
@@ -43,5 +58,41 @@ link %}
     </div>
   </div>
 </div>
+
+{% endblock %} {% block script %}
+
+<script>
+
+  // search
+  window.addEventListener("load", () => {
+    let search = document.getElementById("search");
+    let card = document.querySelectorAll(".card-deck .card-body");
+    let body = document.querySelector(".card-deck");
+    search.addEventListener("input", (e) => {
+      let val = e.target.value.trim().toLowerCase();
+
+      
+      if (val && val.length > 0) {
+
+        card.forEach(e => {
+          let title = e.querySelector('.card-title').textContent.toLowerCase();
+          let author = e.querySelector('.author').textContent.toLowerCase();
+          if (title.indexOf(val) > -1 || author.indexOf(val) > -1){
+            e.parentElement.style.display = ''; 
+          }
+          else {
+            e.parentElement.style.display = 'none';
+          }
+        })
+      
+      }else{
+        for (const i of card){
+          i.parentElement.removeAttribute('style')
+        }
+      }
+     
+    });
+  });
+</script>
 
 {% endblock %}

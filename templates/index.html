@@ -14,79 +14,78 @@
         
 <div class="container d-flex justify-content-center align-items-center">
 
-  <form class="w-100" action="{{ url_for('index') }}" method="post">
+      <form class="w-100" action="{{ url_for('index') }}" method="post">
 
-    <div class="form">
-  
-        <div class="row no-gutters justify-content-center align-items-center">
-          
-          <!-- head -->
-        <div class="col-12 form-group">
-          <h1 class="col-12">Register</h1>
-          <p class="col-12">Please fill in this form to create an account.</p>
-        </div>
-            
-        <!-- first name/ last name -->
-        <div class="col-12 form-group">
-
-          <div class="row no-gutters w-100 px-3">
-
-            <!-- first name -->
-            <div class="col-12 col-md-6 px-1">
-              <label for="fname"><b>First name </b>:  </label>    
-              <input type="text" class="form-control" id="fname" placeholder="Enter first name" name="fname" required>
+        <div class="form">
+      
+            <div class="row no-gutters justify-content-center align-items-center">
+              
+              <!-- head -->
+            <div class="col-12 form-group text-center">
+              <h1 class="col-12">Register</h1>
+              <p class="col-12">Please fill in this form to create an account.</p>
             </div>
-
-            <!-- last name -->
-            <div class="col-12 col-md-6 px-1">
-               <label for="lname"><b>Last name </b>:</label>   
-                <input type="text" class="form-control" id="lname" placeholder="Enter last name" name="lname" required /> 
-            </div>
-
-          </div>
-           
-        </div>
-        
-        <!-- credentials -->
-        <div class="col-12 form-group">
-            
-            <div class="col">
-              <label for="userEmail"><b>Email</b> :</label>
-              <input type="text" class="form-control" id="userEmail" placeholder="Enter-Email" name="email" required />
-            </div>
-            
-            <div class="col">
-              <label for="password"><b>Password</b> :</label>
-              <input type="password" class="form-control" placeholder="Enter-Password" id="password" name="password" required /> 
-            </div>
-
-            <div class="col">
-              <label for="confirm_password"><b>Confirm Password</b> :</label>
-              <input type="password" id="confirm_password" placeholder="repeat password" onkeyup='check();' name="cnfrm-pwd" required /> 
-              <span id='message'></span>
-            </div>
-           
-           
-        </div>
-        
-        <div class="col-12 border-top">
-          <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
-        </div>
-  
-        <button type="submit" class="pure-button registerbtn" name="Reg-Button">Register me</button>
-  
-      </div>
-  
-    </div>
+                
+            <!-- first name/ last name -->
+            <div class="col-12 form-group">
     
-    <div class="signin">
-      <p>Already have an account? <a href="Signin.html">Sign in</a>.</p>
-    </div>
-
-  </form>
+              <div class="row no-gutters w-100 px-3">
+    
+                <!-- first name -->
+                <div class="col-12 col-md-6 px-1">
+                  <label for="fname"><b>First name </b>:  </label>    
+                  <input type="text" class="form-control" id="fname" placeholder="Enter first name" name="fname" required>
+                </div>
+    
+                <!-- last name -->
+                <div class="col-12 col-md-6 px-1">
+                   <label for="lname"><b>Last name </b>:</label>   
+                    <input type="text" class="form-control" id="lname" placeholder="Enter last name" name="lname" required /> 
+                </div>
+    
+              </div>
+               
+            </div>
+            
+            <!-- credentials -->
+            <div class="col-12 form-group">
+                
+                <div class="col">
+                  <label for="userEmail"><b>Email</b> :</label>
+                  <input type="text" class="form-control" id="userEmail" placeholder="Enter-Email" name="email" required />
+                </div>
+                
+                <div class="col">
+                  <label for="password"><b>Password</b> :</label>
+                  <input type="password" class="form-control" placeholder="Enter-Password" id="password" name="password" required /> 
+                </div>
+    
+                <div class="col">
+                  <label for="confirm_password"><b>Confirm Password</b> :</label>
+                  <input type="password" id="confirm_password" placeholder="repeat password" onkeyup='check();' name="cnfrm-pwd" required /> 
+                  <span id='message'></span>
+                </div>
+               
+               
+            </div>
+            
+            <div class="col-12 border-top">
+              <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+            </div>
+      
+            <button type="submit" class="btn btn-outline-info registerbtn" name="Reg-Button">Register me</button>
+      
+          </div>
+      
+        </div>
+        
+        <div class="signin">
+          <p>Already have an account? <a href="Signin.html">Sign in</a>.</p>
+        </div>
+    
+      </form>
 
   
-
 </div>
 
     

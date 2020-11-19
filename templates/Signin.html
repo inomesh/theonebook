@@ -10,28 +10,51 @@
 
 {% block body %}
         
-<form action="{{ url_for('login') }}" method="POST">
-    <div class="container">
-      <h1>Sign-in here</h1>
-      <hr>
-  
-      <label for="name"><b>email</b></label><br>
-      <input type="text" placeholder="Enter-Email" name="Semail" required/><br>
-  
-      <label for="psw"><b>Password</b></label><br>
-      <input type="password" placeholder="Enter Password" name="Spassword" required/> <br>
-  
-      <hr>
-  
-      <button type="submit" class="registerbtn">log in</button>
+<div class="container d-flex justify-content-center align-items-center">
+
+
+  <form class="w-100" action="{{ url_for('login') }}" method="POST">
+
+  <!-- form -->
+    <div class="row no-gutters justify-content-center align-items-center">
+
+      <!-- head -->
+        <div class="col-12 text-center">
+          <h1>Sign-in here</h1>
+        </div>
+        
+      <!-- body -->
+
+       <div class="col-12 col-md-8 form-group">
+
+          <div class="col">
+            <label class="form-label" for="email"><b>email</b></label> 
+            <input type="text" id="email" class="form-control" placeholder="Enter-Email" name="Semail" required/> 
+          </div>
+
+          <div class="col">
+            <label  class="form-label" for="psw"><b>Password</b></label> 
+            <input type="password" id="psw" class="form-control" placeholder="Enter Password" name="Spassword" required/>  
+          </div>
+
+       </div>
+       
+       <!-- submit button -->
+       <div class="col-12 col-md-8">
+        <button type="submit" class="btn btn-outline-info registerbtn">log in</button>
+       </div>
+
+       <!-- link for sign-up -->
+      <div class="col-12 col-md-8 signup">
+        <p>Don't have an account? <a href="/">Sign up</a>.</p>
+      </div> 
+
     </div>
-    
-    <div class="container signup">
-      <p>Don't have an account? <a href="/">Sign up</a>.</p>
-    </div>
+
+   
+       
+
   </form>
   
-
-
-    
+</div>
 {% endblock %}

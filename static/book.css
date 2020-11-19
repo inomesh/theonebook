@@ -1,13 +1,29 @@
-h1{
-    color: black;
-    text-align: center;
-    position: relative;
+h1 {
+  color: black;
+  text-align: center;
+  position: relative;
 }
 
-.card-title, .card-text{
-    color: black;
+.card-title,
+.card-text {
+  color: black;
 }
 
-.card{
-    display: flex;
+.card {
+  display: flex;
+}
+
+form {
+  width: 20vw !important;
+  border-radius: 30px !important;
+  transition: all 0.6s ease-in-out !important;
+}
+
+input {
+  outline: none !important;
+  border: none !important;
+  border-radius: 30px !important;
+  width: 100% !important;
+  text-align: center !important;
+  transition: all 0.6s ease-in-out !important;
 }
